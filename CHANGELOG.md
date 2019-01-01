@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of the snort cookbook.
 
+## v4.1.0 ()
+
+- Enabled dokken testing in CircleCI.
+- Removed support for RedHat, CentOS, Scientific and Oracle 6 from the metadata. The DAQ package requires glibc 2.14 which RHEL 6 does not provide.
+
 ## v4.0.1 (2018-12-14)
 
 - Updated checksums for the snort package on CentOS and Fedora
