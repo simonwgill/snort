@@ -10,8 +10,11 @@ source_url       'https://github.com/sous-chefs/snort'
 issues_url       'https://github.com/sous-chefs/snort/issues'
 
 supports 'centos', '~> 7'
+supports 'redhat', '~> 7'
+supports 'scientific', '~> 7'
+supports 'oracle', '~> 7'
 
-%w(ubuntu debian redhat fedora scientific amazon oracle).each do |os|
+%w(ubuntu debian fedora amazon oracle).each do |os|
   supports os
 end
 
