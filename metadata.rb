@@ -11,14 +11,17 @@ issues_url       'https://github.com/sous-chefs/snort/issues'
 
 supports 'centos', '~> 7'
 supports 'redhat', '~> 7'
-supports 'scientific', '~> 7'
-supports 'oracle', '~> 7'
-supports 'fedora', '~> 27'
+supports 'fedora', '>= 26'
 supports 'amazon', '~> 2'
 
 %w(ubuntu debian).each do |os|
   supports os
 end
+
+# Implied by CentOS and RedHat support
+# No testing done by CircleCI
+supports 'scientific', '~> 7'
+supports 'oracle', '~> 7'
 
 depends 'yum-epel'
 depends 'poise-archive'
