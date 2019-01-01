@@ -11,7 +11,53 @@ workflows:
           context: Danger
       - kitchen/lint:
           name: lint
-      - kitchen/dokken:
+      - kitchen/dokken-single:
           name: default
           suite: default
+          platform: amazonlinux-2
+          requires: [  danger, lint ]
+      - kitchen/dokken-single:
+          name: default
+          suite: default
+          platform: debian-8
+          requires: [  danger, lint ]
+      - kitchen/dokken-single:
+          name: default
+          suite: default
+          platform: debian-9
+          requires: [  danger, lint ]
+      - kitchen/dokken-single:
+          name: default
+          suite: default
+          platform: ubuntu-14.04
+          requires: [  danger, lint ]
+      - kitchen/dokken-single:
+          name: default
+          suite: default
+          platform: ubuntu-16.04
+          requires: [  danger, lint ]
+      - kitchen/dokken-single:
+          name: default
+          suite: default
+          platform: ubuntu-18.04
+          requires: [  danger, lint ]
+      - kitchen/dokken-single:
+          name: default
+          suite: default
+          platform: centos-7
+          requires: [  danger, lint ]
+      - kitchen/dokken-single:
+          name: default
+          suite: default
+          platform: fedora-26
+          requires: [  danger, lint ]
+      - kitchen/dokken-single:
+          name: default
+          suite: default
+          platform: fedora-27
+          requires: [  danger, lint ]
+      - kitchen/dokken-single:
+          name: default
+          suite: default
+          platform: fedora-latest
           requires: [  danger, lint ]
