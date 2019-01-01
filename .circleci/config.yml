@@ -29,17 +29,17 @@ workflows:
       - kitchen/dokken-single:
           name: default-ubuntu-14.04
           suite: default
-          platform: ubuntu-14.04
+          platform: ubuntu-1404
           requires: [  danger, lint ]
       - kitchen/dokken-single:
           name: default-ubuntu-16.04
           suite: default
-          platform: ubuntu-16.04
+          platform: ubuntu-1604
           requires: [  danger, lint ]
       - kitchen/dokken-single:
           name: default-ubuntu-18.04
           suite: default
-          platform: ubuntu-18.04
+          platform: ubuntu-1804
           requires: [  danger, lint ]
       - kitchen/dokken-single:
           name: default-centos-7
