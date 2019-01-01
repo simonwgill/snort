@@ -14,8 +14,9 @@ supports 'redhat', '~> 7'
 supports 'scientific', '~> 7'
 supports 'oracle', '~> 7'
 supports 'fedora', '~> 27'
+supports 'amazon', '~> 2'
 
-%w(ubuntu debian amazon).each do |os|
+%w(ubuntu debian).each do |os|
   supports os
 end
 
