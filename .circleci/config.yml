@@ -26,5 +26,60 @@ workflows:
       - kitchen/dokken-single:
           name: default
           suite: default
+          platform: amazonlinux-2
+          requires:
+            *lint_and_unit
+      - kitchen/dokken-single:
+          name: default
+          suite: default
+          platform: debian-8
+          requires:
+            *lint_and_unit
+      - kitchen/dokken-single:
+          name: default
+          suite: default
+          platform: debian-9
+          requires:
+            *lint_and_unit
+      - kitchen/dokken-single:
+          name: default
+          suite: default
+          platform: ubuntu-14.04
+          requires:
+            *lint_and_unit
+      - kitchen/dokken-single:
+          name: default
+          suite: default
+          platform: ubuntu-16.04
+          requires:
+            *lint_and_unit
+      - kitchen/dokken-single:
+          name: default
+          suite: default
+          platform: ubuntu-18.04
+          requires:
+            *lint_and_unit
+      - kitchen/dokken-single:
+          name: default
+          suite: default
+          platform: centos-7
+          requires:
+            *lint_and_unit
+      - kitchen/dokken-single:
+          name: default
+          suite: default
+          platform: fedora-26
+          requires:
+            *lint_and_unit
+      - kitchen/dokken-single:
+          name: default
+          suite: default
+          platform: fedora-27
+          requires:
+            *lint_and_unit
+      - kitchen/dokken-single:
+          name: default
+          suite: default
+          platform: fedora-latest
           requires:
             *lint_and_unit
