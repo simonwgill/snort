@@ -9,7 +9,9 @@ chef_version     '>= 13.0'
 source_url       'https://github.com/sous-chefs/snort'
 issues_url       'https://github.com/sous-chefs/snort/issues'
 
-%w(ubuntu debian redhat centos fedora scientific amazon oracle).each do |os|
+supports 'centos', '~> 7'
+
+%w(ubuntu debian redhat fedora scientific amazon oracle).each do |os|
   supports os
 end
 
