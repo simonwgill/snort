@@ -27,11 +27,6 @@ workflows:
           platform: debian-9
           requires: [  danger, lint ]
       - kitchen/dokken-single:
-          name: default-ubuntu-14.04
-          suite: default
-          platform: ubuntu-1404
-          requires: [  danger, lint ]
-      - kitchen/dokken-single:
           name: default-ubuntu-16.04
           suite: default
           platform: ubuntu-1604
