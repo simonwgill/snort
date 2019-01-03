@@ -16,10 +16,10 @@ This cookbook is maintained by the Sous Chefs. The Sous Chefs are a community of
 
 ### Platforms
 
-- Ubuntu 14.04+
 - RHEL/CentOS, 7.0 and higher only.
 - Fedora
 - Debian 8+
+- Amazon Linux 2
 
 ### Chef
 
