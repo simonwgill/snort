@@ -23,57 +23,9 @@ workflows:
       - kitchen/delivery:
           name: delivery
 
-      - kitchen/dokken-single:
-          name: default-amazonlinux-2
+      - kitchen/dokken:
+          name: default
           suite: default
-          platform: amazonlinux-2
-          requires:
-            *lint_and_unit
-      - kitchen/dokken-single:
-          name: default-debian-8
-          suite: default
-          platform: debian-8
-          requires:
-            *lint_and_unit
-      - kitchen/dokken-single:
-          name: default-debian-9
-          suite: default
-          platform: debian-9
-          requires:
-            *lint_and_unit
-      - kitchen/dokken-single:
-          name: default-ubuntu-16.04
-          suite: default
-          platform: ubuntu-1604
-          requires:
-            *lint_and_unit
-      - kitchen/dokken-single:
-          name: default-ubuntu-18.04
-          suite: default
-          platform: ubuntu-1804
-          requires:
-            *lint_and_unit
-      - kitchen/dokken-single:
-          name: default-centos-7
-          suite: default
-          platform: centos-7
-          requires:
-            *lint_and_unit
-      - kitchen/dokken-single:
-          name: default-fedora-26
-          suite: default
-          platform: fedora-26
-          requires:
-            *lint_and_unit
-      - kitchen/dokken-single:
-          name: default-fedora-27
-          suite: default
-          platform: fedora-27
-          requires:
-            *lint_and_unit
-      - kitchen/dokken-single:
-          name: default-fedora-latest
-          suite: default
-          platform: fedora-latest
+          channel: stable
           requires:
             *lint_and_unit
