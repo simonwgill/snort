@@ -20,60 +20,101 @@ workflows:
       - kitchen/danger:
           name: danger
           context: Danger
+<<<<<<< HEAD
       - kitchen/delivery:
           name: delivery
 
+=======
+      - kitchen/lint:
+          name: lint
+>>>>>>> master
       - kitchen/dokken-single:
           name: default-amazonlinux-2
           suite: default
           platform: amazonlinux-2
+<<<<<<< HEAD
           requires:
             *lint_and_unit
+=======
+          requires: [  danger, lint ]
+>>>>>>> master
       - kitchen/dokken-single:
           name: default-debian-8
           suite: default
           platform: debian-8
+<<<<<<< HEAD
           requires:
             *lint_and_unit
+=======
+          requires: [  danger, lint ]
+>>>>>>> master
       - kitchen/dokken-single:
           name: default-debian-9
           suite: default
           platform: debian-9
+<<<<<<< HEAD
           requires:
             *lint_and_unit
+=======
+          requires: [  danger, lint ]
+>>>>>>> master
       - kitchen/dokken-single:
           name: default-ubuntu-16.04
           suite: default
           platform: ubuntu-1604
+<<<<<<< HEAD
           requires:
             *lint_and_unit
+=======
+          requires: [  danger, lint ]
+>>>>>>> master
       - kitchen/dokken-single:
           name: default-ubuntu-18.04
           suite: default
           platform: ubuntu-1804
+<<<<<<< HEAD
           requires:
             *lint_and_unit
+=======
+          requires: [  danger, lint ]
+>>>>>>> master
       - kitchen/dokken-single:
           name: default-centos-7
           suite: default
           platform: centos-7
+<<<<<<< HEAD
           requires:
             *lint_and_unit
+=======
+          requires: [  danger, lint ]
+>>>>>>> master
       - kitchen/dokken-single:
           name: default-fedora-26
           suite: default
           platform: fedora-26
+<<<<<<< HEAD
           requires:
             *lint_and_unit
+=======
+          requires: [  danger, lint ]
+>>>>>>> master
       - kitchen/dokken-single:
           name: default-fedora-27
           suite: default
           platform: fedora-27
+<<<<<<< HEAD
           requires:
             *lint_and_unit
+=======
+          requires: [  danger, lint ]
+>>>>>>> master
       - kitchen/dokken-single:
           name: default-fedora-latest
           suite: default
           platform: fedora-latest
+<<<<<<< HEAD
           requires:
             *lint_and_unit
+=======
+          requires: [  danger, lint ]
+>>>>>>> master
