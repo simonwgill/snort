@@ -98,26 +98,6 @@ action :create do
       # snort needs libnghttp2 from EPEL
       include_recipe 'yum-epel::default' if platform_family?('rhel')
 
-      daq_rpm = "daq-#{new_resource.daq_version}#{package_suffix}.x86_64.rpm"
-
-      remote_file "#{Chef::Config[:file_cache_path]}/#{daq_rpm}" do
-        source "https://www.snort.org/downloads/snort/#{daq_rpm}"
-        checksum new_resource.daq_checksum
-        mode '0644'
-      end
-
-      package 'daq' do
-        source "#{Chef::Config[:file_cache_path]}/#{daq_rpm}"
-      end
-
-      snort_rpm = "snort-#{new_resource.rpm_version + package_suffix}.x86_64.rpm"
-
-      remote_file "#{Chef::Config[:file_cache_path]}/#{snort_rpm}" do
-        source "https://www.snort.org/downloads/snort/#{snort_rpm}"
-        checksum new_resource.checksum
-        mode '0644'
-      end
-
       if platform_family?('rhel')
         package %w(libdnet-devel libdnet)
         # Snort expects a .1 file
@@ -127,8 +107,11 @@ action :create do
         end
       end
 
+      # Available in CentOS, RHEL and Fedora https://pkgs.org/download/daq
+      package 'daq'
+
+      # Available in CentOS, RHEL and Fedora https://pkgs.org/download/snort
       package 'snort' do
-        source "#{Chef::Config[:file_cache_path]}/#{snort_rpm}"
         notifies :start, 'snort_service[snort]', :delayed
       end
     end
