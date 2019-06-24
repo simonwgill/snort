@@ -110,9 +110,12 @@ action :create do
       # Available in CentOS, RHEL and Fedora https://pkgs.org/download/daq
       package 'daq'
 
-      # Available in CentOS, RHEL and Fedora https://pkgs.org/download/snort
-      package 'snort' do
-        notifies :start, 'snort_service[snort]', :delayed
+      snort_rpm = "snort-#{new_resource.rpm_version + package_suffix}.x86_64.rpm"
+
+      remote_file "#{Chef::Config[:file_cache_path]}/#{snort_rpm}" do
+        source "https://www.snort.org/downloads/snort/#{snort_rpm}"
+        checksum new_resource.checksum
+        mode '0644'
       end
     end
   end
