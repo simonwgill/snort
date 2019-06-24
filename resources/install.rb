@@ -118,11 +118,9 @@ action :create do
         mode '0644'
       end
 
-      directory '/etc/snort' do
-        owner 'root'
-        group 'root'
-        mode '0755'
-        action :create
+      package 'snort' do
+        source "#{Chef::Config[:file_cache_path]}/#{snort_rpm}"
+        notifies :start, 'snort_service[snort]', :delayed
       end
     end
   end
