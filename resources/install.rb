@@ -117,6 +117,13 @@ action :create do
         checksum new_resource.checksum
         mode '0644'
       end
+
+      directory '/etc/snort' do
+        owner 'root'
+        group 'root'
+        mode '0755'
+        action :create
+      end
     end
   end
 end
