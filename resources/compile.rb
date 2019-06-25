@@ -68,7 +68,7 @@ action :compile do
   execute 'Compile snort' do
     cwd snort_path
     command <<-EOH
-      ./configure --enable-sourcefire
+      ./configure --enable-sourcefire --disable-open-appid
       make
       make install
       ldconfig
