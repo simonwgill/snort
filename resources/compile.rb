@@ -71,7 +71,7 @@ action :compile do
 
   execute 'Post-compile steps' do
     cwd snort_path
-    command  <<-EOH
+    command <<-EOH
       ln -s /usr/local/bin/snort /usr/sbin/snort
       cp #{snort_path}/etc/*.conf* /etc/snort
       cp #{snort_path}/etc/*.map* /etc/snort
